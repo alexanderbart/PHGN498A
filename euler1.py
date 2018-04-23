@@ -13,6 +13,4 @@ def threeandfive(var):
             ans = ans - i
     print("\nThe sum of factors of three and five under",var,"is:",ans)
     return(ans)
-#print(threeandfive(10)==23)
-threeandfive(int(input("To what number do you want the sum of factors \
-of 3 and 5? ")))
+print(threeandfive(1000))
