@@ -1,19 +1,49 @@
 ''' Euler 24 '''
 import numpy as np
+import math
 
-digit = 2
-combos = 2
-string = ['01','10']
+index = 999999 #Millionth starting with 0
+nums = [0,1,2,3,4,5,6,7,8,9]
+digits = 10
 
-while digit < 11:
+answer = ''
 
-    # string = np.zeros(combos,dtype = str)
-    # print(string)
+while digits != 1:
 
-    # for i in range(combos):
-    #     for j in range(digit):
-    #         string[i] += str(digit)
+    #Build a grid with each column having permutations of each possible starting
+    #number
+    print('\n Grid is {} rows by {} columns'\
+    .format(math.factorial(digits-1),digits))
 
-    digit += 1
-    combos *= digit
-    print(combos)
+    numrows = math.factorial(digits-1)
+
+    column = int(index/numrows)
+    print('column is',column)
+
+    answer += str(nums[column])
+    nums.remove(nums[column])
+    print(nums)
+
+    index = index%numrows
+    digits -= 1
+
+answer += str(nums[0])
+print(answer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#############################################################################
