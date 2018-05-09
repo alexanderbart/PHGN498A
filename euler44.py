@@ -1,22 +1,25 @@
 ''' Euler 44 '''
+import math
 
 pentagols = []
 
-for i in range(1,10**5):
-    num = i*(3*i-1)/2
-    pentagols.append(int(num))
+def is_pent(x):
+    ans = (math.sqrt(int(24*x)+1)+1)/6
+    remain = ans%1
+    if remain == 0:
+        #print(x)
+        return True
+    else:
+        return False
 
-    n = (math.sqrt((24 * x) + 1) + 1) / 6
-
-for i in range(len(pentagols)):
-    print(pentagols[i])
-    for k in range(i):
-        for j in range(k):
-
-            pent1 = pentagols[k]
-            pent2 = pentagols[j]
-            pent3 = pentagols[i]
-
-            if pent1 + pent2 == pent3:
-                if pent1 - pent2
-                print(pent1,pent2,pent1+pent2,pent1-pent2)
+condition = 1
+numj = 0
+while condition:
+    numj += 1
+    #print(numj)
+    pentj = numj*(3*numj-1)/2
+    for numk in range(1,numj):
+        pentk = numk*(3*numk-1)/2
+        if is_pent(pentj-pentk) and is_pent(pentj+pentk):
+            print('D =',pentj-pentk)
+            condition = 0
